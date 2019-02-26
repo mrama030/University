@@ -1,0 +1,8 @@
+
+/* CSS Class for image position, using absolute position. */
+.imagePosition
+{
+    position:absolute;
+    top:200px;
+    left:200px;
+}

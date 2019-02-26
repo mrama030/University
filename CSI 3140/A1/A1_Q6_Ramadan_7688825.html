@@ -1,0 +1,33 @@
+<!--
+Mohamed Ali Ramadan - 7688825
+Question 6
+Create an HTML5 document that contains an autocomplete form with a text input element and an associated datalist element containing the days of the week.
+Provide a submit button and a reset button. [10 marks]
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 6</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Question 6</h1>
+        <form method="post" autocomplete="on">
+            <input type="hidden" name="subject" value="textform">
+            <input type="text" name="day" placeholder="Enter a day..." list="listofdays" required>
+
+            <datalist id="listofdays">
+                <option value="Monday"></option>
+                <option value="Tuesday"></option>
+                <option value="Wednesday"></option>
+                <option value="Thursday"></option>
+                <option value="Friday"></option>
+                <option value="Saturday"></option>
+                <option value="Sunday"></option>
+            </datalist>
+
+            <input type="submit" value="Submit" name="submitbutton">
+            <input type="reset" value="Clear Form" name="resetbutton">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Question 7</title>
+
+        <script type="text/javascript">
+
+            // declare six variables to contain the totals
+            var total = 0;
+            var totalProduct1 = 0;
+            var totalProduct2 = 0;
+            var totalProduct3 = 0;
+            var totalProduct4 = 0;
+            var totalProduct5 = 0;
+
+            var complete = false; //sentinel
+            var addMore; // value which determines if the user to wishes to repeat the process of adding products
+
+            var input = -2; //user input (initialized to a failing value)
+
+            var valid = false; //true if the user input is a non negative number (initialized to false), does not have to be an integer.
+
+            while (!complete)// sentinel loop
+            {
+                // start with product number 1, through 5
+                for (var currentProductNumber = 1; currentProductNumber <= 5; currentProductNumber++)
+                {
+                    while (valid == false) // Obtain a valid input.
+                    {
+                        input = window.prompt("Please enter the quantity of product #" + currentProductNumber + " sold.");
+
+                        if (isNaN(input) == false && parseInt(input) > -1) //must be a number and non-negative
+                        {
+                            valid = true;
+                        }
+                        else
+                        {
+                            window.alert("You have not entered a valid number, please try again.");//ask to try again
+                        }
+                    }
+
+                    switch (currentProductNumber)// depending on the product number, calculate and add the total
+                    {
+                        case 1:
+                            totalProduct1 += input * 2.98;
+                            break;
+                        case 2:
+                            totalProduct2 += input * 4.50;
+                            break;
+                        case 3:
+                            totalProduct3 += input * 9.98;
+                            break;
+                        case 4:
+                            totalProduct4 += input * 4.49;
+                            break;
+                        case 5:
+                            totalProduct5 += input * 6.87;
+                            break;
+                    }
+                    valid = false; // reset
+                    input = -2; // reset
+                }
+
+                // ask if user wishes to perform the process again (adding to the previous results)
+                addMore = window.prompt("If you would like to add more of the products 1 through 5, please type in the character : \'Y\' or \'y\'");
+
+                // anything other than the y or Y characters means false (user wishes to complete the action)
+                if (addMore == "y" || addMore == "Y")
+                {
+                    ; // sentinel remains false, while loop again
+                }
+                else
+                {
+                    complete = true; // exit while loop
+                }
+            }
+
+            // calculate the entire total
+            total = totalProduct1 + totalProduct2 + totalProduct3 + totalProduct4 + totalProduct5;
+
+            // Output results in a table, ensure that 2 decimal places are used for numbers (since this is dollar currency)
+            document.writeln(
+                "<table border='2px'>" +
+                "<thead>" +
+                "<tr> " +
+                "<th>Product Number</th>" +
+                "<th>1</th>" +
+                "<th>2</th>" +
+                "<th>3</th>" +
+                "<th>4</th>" +
+                "<th>5</th>" +
+                "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                "<tr>" +
+                "<td>Product Price</td>" +
+                "<td>2.98$</td>" +
+                "<td>4.50$</td>" +
+                "<td>9.98$</td>" +
+                "<td>4.49$</td>" +
+                "<td>6.87$</td>" +
+                "</tr>" +
+                "<tr>" +
+                "<td>Total Product Sales</td>" +
+                "<td>" + totalProduct1.toFixed(2) + "$</td>" +
+                "<td>" + totalProduct2.toFixed(2) + "$</td>" +
+                "<td>" + totalProduct3.toFixed(2) + "$</td>" +
+                "<td>" + totalProduct4.toFixed(2) + "$</td>" +
+                "<td>" + totalProduct5.toFixed(2) + "$</td>" +
+                "</tr>" +
+                "</tbody>" +
+                "<tfoot>" +
+                "<tr>" +
+                "<th>Grand Total</th>" +
+                "<th colspan='5'>" + total.toFixed(2) + "$</th>" +
+                "</tr>" +
+                "</tfoot>" +
+                "</table>");
+        </script>
+    </head>
+    <body></body>
+</html>

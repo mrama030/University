@@ -1,0 +1,24 @@
+<!--
+Mohamed Ali Ramadan - 7688825
+Question 5
+Create an HTML5 document that contains an autocomplete search form using a search input element in which the user can enter a search query. Add a submit button and a reset button.
+Using Google Chrome, test the form by entering January and submitting the form. Then enter J in the input element to see previous entries that started with
+J – January should be displayed below the input element. Enter June and submit the form again. Now enter J in the input element to see previous entries that
+started with J – January and June should be displayed below the input element. Try this with your own search queries as well. [10 marks] -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 5</title>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <h1>Question 5</h1>
+        <!--Using the get http method instead of post, as this is a search query.-->
+        <form method="get" autocomplete="on">
+            <input type="hidden" name="subject" value="Search Query Form">
+            <input type="search" placeholder="Enter a search query here" name="searchbox" required autofocus >
+            <input type="submit" value="Search" name="submitbutton">
+            <input type="reset" value="Clear Form" name="resetbutton">
+        </form>
+    </body>
+</html>

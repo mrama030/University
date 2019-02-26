@@ -1,0 +1,109 @@
+<!--
+Student Name: Mohamed Ali Ramadan
+Student Number: 7688825
+
+Modify your solution to Question 2 above to count the number of guesses the player makes.
+If the number is fewer than 10, display “Either you know the secret or you got lucky!”.
+If the player guesses the number in 10 tries, display “Ahah! You know the secret!”.
+If the player makes more than 10 guesses, display “You should be able to do better!”
+In addition, handle incorrect input: If the player’s input is not a number, display
+“Wrong input! You should enter a number between 1 and 1000.” and do not count that guess.
+ [10 marks]
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Question 3</title>
+
+        <script type="text/javascript">
+
+            window.addEventListener("load", initializeButton, false);
+
+            function initializeButton()
+            {
+                // add event listener on button
+                var submit = document.getElementById("submitButton");
+                submit.addEventListener("click", submitNumber, false);
+            }
+
+            // Generate a random number
+            var randomNumber = Math.floor(1 + Math.random()*1000);
+            // remove comments of this line below to see the answer before the guessing begins
+            // window.alert("The number generated is " + randomNumber);
+
+            var youWin = false; // flag
+            var tries = 0; // number of tries
+
+            var resultArea = document.getElementById("resultArea");
+            resultArea.innerHTML = "<h3>Guess a number between 1 and 1000.</h3>";
+
+            function submitNumber()
+            {
+                var valid = false;
+                var input = document.getElementById("textInput");
+
+                if (isNaN(input.value) == false && parseInt(input.value) > 0 && parseInt(input.value) < 1001)
+                {
+                    valid = true; // valid attempt
+                }
+                else {
+                    if (isNaN(input.value) == true) // user did not enter a number
+                    {
+                        window.alert("Wrong input! You should enter a number between 1 and 1000.");
+                        input.value="";
+                    }
+                    else //it is a number lower than 1 or higher than 1000 or empty string
+                    {
+                        window.alert("You must enter a number between 1 and 1000.");
+                        input.value="";
+                    }
+                }
+
+                if (youWin == false && valid == true)
+                {
+                    var resultArea = document.getElementById("resultArea");
+                    var triesArea = document.getElementById("tries");
+                    tries++; // counts as an attempt
+
+                    if (input.value == randomNumber) // correct answer
+                    {
+                        if (tries == 10)
+                        {
+                            resultArea.innerHTML = "<h2>Ahah! You know the secret!</h2>";
+                        }
+                        else if (tries < 10)
+                        {
+                            resultArea.innerHTML = "<h2>Either you know the secret or you got lucky!</h2>";
+                        }
+                        else // tries > 10
+                        {
+                            resultArea.innerHTML = "<h2>You should be able to do better!</h2>";
+                        }
+                        resultArea.innerHTML += "<h2>Tries: " + tries + "</h2>";
+                        youWin = true;
+                        var submit = document.getElementById("submitButton");
+                        submit.setAttribute("disabled", "disabled");
+
+                    }
+                    else if (input.value > randomNumber)
+                    {
+                        resultArea.innerHTML = "<h2>Too high. Try again.</h2>";
+                    }
+                    else { //input.value < randomNumber
+                        resultArea.innerHTML = "<h2>Too low. Try again.</h2>";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Guess The Number GAME</h1>
+        <div id="resultArea"></div>
+        <p>
+            Guess a number between 1 and 1000:
+            <input type="text" id="textInput" placeholder="Please enter the number here" size="30">
+            <input type="button" id="submitButton" value="Submit Number">
+        </p>
+    </body>
+</html>

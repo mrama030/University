@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Question 6</title>
+
+        <script type = "text/javascript">
+
+            var flagProvidedCorrectInput = false; //flag, must be true to exit while loop
+            var input; // input string from user
+            var convertedInput; // holds integer value of input, if it is a number
+
+            while (flagProvidedCorrectInput == false)//loop until correct input is obtained
+            {
+                input = window.prompt("Please enter a 5-digit integer.");//obtain an input
+
+                if (isNaN(input) == false) // If input is a number.
+                {
+                    convertedInput = parseInt(input); //Convert to integer.
+
+                    if (convertedInput <= 99999 && convertedInput >= 10000) // If a positive 5-digit input was entered.
+                    {
+                        document.writeln("<h1>The input is a 5-digit integer.</h1>")
+                        flagProvidedCorrectInput = true; // Exit while loop.
+                    }
+                    else if (convertedInput >= -99999 && convertedInput <= -10000) // If a negative 5-digit input was entered.
+                    {
+                        window.alert("You have entered a 5-digit negative integer input, it will be converted to a positive one.");
+                        convertedInput = convertedInput * -1;
+                        document.writeln("<h1>The input is a 5-digit integer.</h1>")
+                        flagProvidedCorrectInput = true; // Exit while loop.
+                    }
+                    else
+                    {
+                        window.alert("You have entered a numeric input which is not 5-digits. Please try again.");
+                    }
+                }
+                else
+                {
+                    window.alert("You have entered a non numeric input. Please try again.");
+                }
+            }
+
+            document.writeln("<h1>The input was : " + convertedInput + "</h1>");
+
+            // Verify that the input is a palindrome
+
+            var stringInput = String(convertedInput); // convert into a string to compare characters
+
+            //check is the first and last digits match, also check is the second and fourth digits match
+            if (stringInput.charAt(1) == stringInput.charAt(3) && stringInput.charAt(0) == stringInput.charAt(4))
+            {
+                //if yes, then the input is a palindrome
+                document.writeln("<h1>The input is also a palindrome.</h1>")
+            }
+            else
+            {
+                //if not, the input is not a palindrome
+                document.writeln("<h1>The input is NOT a palindrome.</h1>")
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

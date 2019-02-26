@@ -1,0 +1,49 @@
+<!--
+Question 4
+Mohamed Ali Ramadan - 7688825
+A local university has asked you to create an HTML5 document that allows prospective students to provide feedback about their campus visit.
+Your HTML5 document should contain a form with text fields for name and e-mail address. Provide checkboxes that allow prospective students to
+indicate what they liked most about the campus. The checkboxes should include: campus, students, location, atmosphere, dorm rooms and sports.
+Also, provide radio buttons that ask the prospective students how they became interested in the university. Options should include: friends, television,
+Internet and other. In addition, provide a text area for additional comments, a submit button and a reset button. Use post to send the information in the
+form to http://www.deitel.com. [15 marks]
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Question 4</title>
+    </head>
+    <body>
+        <h1>Question 4 - Local University's Name Here</h1>
+        <h2>Feedback Form</h2>
+        <p>Please complete the following feedback form.</p>
+        <form method="post" action="http://www.deitel.com">
+            <input type="hidden" name="subject" value="Feedback Form Local University">
+            <p><label>Name: <input name="name" type="text" size="30" maxlength="40" autofocus required></label></p>
+            <p><label>E-mail Address: <input name="email" type="text" size="30" maxlength="45" required></label></p>
+            <p>Please select what items you liked the most about our campus.</p>
+            <p>
+                <label><input name="liked" type="checkbox" value="campus">Campus</label>
+                <label><input name="liked" type="checkbox" value="students">Students</label>
+                <label><input name="liked" type="checkbox" value="location">Location</label>
+                <label><input name="liked" type="checkbox" value="atmosphere">Atmosphere</label>
+                <label><input name="liked" type="checkbox" value="rooms">Dorm Rooms</label>
+                <label><input name="liked" type="checkbox" value="sports">Sports</label>
+            </p>
+            <p>How did you hear about this University?</p>
+            <p>
+                <label><input name="interestsource" type="radio" value="friends" required>Friends</label>
+                <label><input name="interestsource" type="radio" value="tv" required>Television</label>
+                <label> <input name="interestsource" type="radio" value="internet" required>Internet</label>
+                <label><input name="interestsource" type="radio" value="other" required>Other</label>
+            </p>
+            <p>Please enter any additional comments below.</p>
+            <textarea rows="5" columns="60" name="comments">Enter any additional comments here...</textarea>
+            <p>
+                <input name="submitbutton" type="submit" value="Submit Form">
+                <input name="resetbutton" type="reset" value="Clear Form">
+            </p>
+        </form>
+    </body>
+</html>

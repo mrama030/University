@@ -1,0 +1,41 @@
+<!--
+Mohamed Ali Ramadan - 7688825
+Question 7
+Create a website registration form to obtain a user’s first name, last name and e-mail address.
+in addition, include an optional survey question that asks the user’s year in university (e.g., Not yet
+in university, Freshman, Sophomore, Junior, Senior, and Graduate). Place the survey question in a details element
+that the user can expand to see the question. Add a submit button and a reset button. [10 marks]
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 7</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Question 7</h1>
+        <h3>Website Registration Form</h3>
+
+        <form method="post">
+            <input type="hidden" name="subject" value="Form with optional elements">
+            <p><label>First Name: <input type="text" name="firstname" size="25" maxlength="40" placeholder="Enter your first name..." required autofocus="on"></label></p>
+            <p><label>Last Name: <input type="text" name="lastname" size="25" maxlength="40" placeholder="Enter your last name..." required></label></p>
+            <p><label>E-mail:<input type="email" name="emailaddress" placeholder="Enter your email address..." required >(example: domain@name.com)</label></p>
+
+            <details>
+                <summary>Expand this to access an optional question...</summary>
+                <p>Which university level are you currently in ?</p>
+                <p>
+                    <label><input type="radio" name="level" value="Freshman">Freshman</label>
+                    <label><input type="radio" name="level" value="Sophomore">Sophomore</label>
+                    <label><input type="radio" name="level" value="Junior">Junior</label>
+                    <label><input type="radio" name="level" value="Senior">Senior</label>
+                    <label><input type="radio" name="level" value="Graduate">Graduate</label>
+                </p>
+            </details>
+            <br>
+            <input type="submit" name="submitbutton" value="Complete">
+            <input type="reset" name="resetbutton" value="Clear">
+        </form>
+    </body>
+</html>

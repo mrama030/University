@@ -1,0 +1,36 @@
+<!-- Question 6 -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Question 6</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="question6" height="250" width="500" style="border: 3px solid black"></canvas>
+        <script type="text/javascript">
+            var canvas = document.getElementById("question6");
+            var context = canvas.getContext("2d");
+            // draw a non-rectangular shape with lines
+            context.beginPath();
+            context.lineWidth = 5;
+            context.lineJoin = "round"; // can be round, bevel, miter
+            context.lineCap = "butt"; // can be butt, round, square
+            // draw shape
+            context.moveTo(166,125); // initial position
+            context.lineTo(250,10);
+            context.lineTo(334,125);
+            context.lineTo(313,240);
+            context.lineTo(188,240);
+            context.closePath();
+            // define vertical linear gradient with 3 color stops
+            var verticalGradient = context.createLinearGradient(0,0,0,250);
+            verticalGradient.addColorStop(0.25, "blue");
+            verticalGradient.addColorStop(0.5, "orange");
+            verticalGradient.addColorStop(0.75, "green");
+            context.fillStyle = verticalGradient;
+            context.fill();
+        </script>
+    </body>
+</html>

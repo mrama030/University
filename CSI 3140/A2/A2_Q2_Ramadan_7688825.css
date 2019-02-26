@@ -1,0 +1,27 @@
+.navButton{
+    padding:4px;
+    border: purple dotted thick;
+    width:200px;
+    height:40px;
+    margin:4px;
+    background-color:lightgray;
+    font-family:"Arial";
+    font-size:20px;
+    text-align: center;
+}
+
+div a{color:yellowgreen;}
+
+.navButton:hover{
+    padding:4px;
+    border: orange solid 8px;
+    width:200px;
+    height:40px;
+    margin:0px;
+    background-color:lightblue;
+    font-family:"Times New Roman";
+    font-size:22px;
+    text-align: center;
+}
+
+div:hover a {color:deeppink;}

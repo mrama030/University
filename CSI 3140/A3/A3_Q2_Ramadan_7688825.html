@@ -1,0 +1,77 @@
+<!--
+Student Name: Mohamed Ali Ramadan
+Student Number: 7688825
+
+Write a script (embedded in an HTML5 document) that plays a “guess the number”
+game as follows: Your program chooses the number to be guessed by selecting a
+random integer in the range from 1 to 1000. The script displays the prompt “Guess a
+number between 1 and 1000” next to a text field. The player types a first guess into
+the text field and clicks a button to submit the guess to the script. If the player’s guess
+is incorrect, your program should display “Too high. Try again.” or “Too low. Try
+again.” to help the player zero in on the correct answer. When the user enters the
+correct answer, display “Congratulations. You guessed the number!”. [10 marks]
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Question 2</title>
+
+        <script type="text/javascript">
+
+            window.addEventListener("load", initializeButton, false);
+
+            function initializeButton()
+            {
+                // add event listener on button
+                var submit = document.getElementById("submitButton");
+                submit.addEventListener("click", submitNumber, false);
+            }
+
+            // Generate a random number
+            var randomNumber = Math.floor(1 + Math.random()*1000);
+            // remove comments of this line below to see the answer before the guessing begins
+            // window.alert("The number generated is " + randomNumber);
+
+            var youWin = false; // flag
+
+            var resultArea = document.getElementById("resultArea");
+            resultArea.innerHTML = "<h3>Guess a number between 1 and 1000.</h3>";
+
+            function submitNumber()
+            {
+                var input = document.getElementById("textInput");
+
+                if (!youWin)
+                {
+                    var resultArea = document.getElementById("resultArea");
+
+                    if (input.value == randomNumber)
+                    {
+                        resultArea.innerHTML = "<h2>Congratulations. You guessed the number!</h2>";
+                        youWin = true;
+                        var submit = document.getElementById("submitButton");
+                        submit.setAttribute("disabled", "disabled");
+                    }
+                    else if (input.value > randomNumber)
+                    {
+                        resultArea.innerHTML = "<h2>Too high. Try again.</h2>";
+                    }
+                    else { //input.value < randomNumber
+                        resultArea.innerHTML = "<h2>Too low. Try again.</h2>";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Guess The Number GAME</h1>
+        <div id="resultArea"></div>
+        <p>
+            Guess a number between 1 and 1000:
+            <input type="text" id="textInput" placeholder="Please enter the number here" size="30">
+            <input type="button" id="submitButton" value="Submit Number">
+        </p>
+    </body>
+</html>

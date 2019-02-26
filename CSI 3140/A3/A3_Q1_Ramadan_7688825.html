@@ -1,0 +1,91 @@
+<!--
+Student Name: Mohamed Ali Ramadan
+Student Number: 7688825
+
+a) Function celsius returns the Celsius equivalent of a Fahrenheit temperature,
+using the calculation: C = 5.0 / 9.0 * (F – 32)
+b) Function fahrenheit returns the Fahrenheit equivalent of a Celsius temperature,
+using the calculation: F = 9.0 / 5.0 * C + 32
+c) Use these functions to write a script (embedded in an HTML5 document) that enables the user to
+ enter either a Fahrenheit or a Celsius temperature and displays the Celsius or Fahrenheit equivalent.
+Your HTML5 document should contain two buttons – one to initiate the conversion
+from Fahrenheit to Celsius and one to initiate the conversion from Celsius to
+Fahrenheit. [10 marks] -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta chaset = "utf-8">
+        <title>Question 1</title>
+
+        <script type="text/javascript">
+
+            window.addEventListener("load", startApp, false);
+
+            function startApp()
+            {
+                // stores convert to celsius button
+                var celsiusButton = document.getElementById("convertToC");
+                // adds event listener to button
+                celsiusButton.addEventListener("click", convertToCelsius, false);
+
+                // stores convert to fahrenheit button
+                var fahrenheitButton = document.getElementById("convertToF");
+                // adds event listener to button
+                fahrenheitButton.addEventListener("click", convertToFahrenheit, false);
+            }
+
+            // called when convert to celsius button is clicked
+            function convertToCelsius()
+            {
+                // Fahrenheit text input
+                var textFahrenheit = document.getElementById("F");
+                // Celsius text input
+                var textCelsius = document.getElementById("C");
+
+                textCelsius.value = celsius(textFahrenheit.value);
+
+                var resultSpace = document.getElementById("result");
+                resultSpace.innerHTML = "<h3>In celsius : " + textCelsius.value + "</h3>";
+            }
+            // Converts to celsius
+            function celsius (fahr)
+            {
+                return (5.0 / 9.0 * (fahr-32));
+            }
+
+            // called when convert to fahrenheit button is clicked
+            function convertToFahrenheit()
+            {
+                // Fahrenheit text input
+                var textFahrenheit = document.getElementById("F");
+                // Celsius text input
+                var textCelsius = document.getElementById("C");
+
+                textFahrenheit.value = fahrenheit(textCelsius.value);
+
+                var resultSpace = document.getElementById("result");
+                resultSpace.innerHTML = "<h3>In fahrenheit : " + textFahrenheit.value + "</h3>";
+            }
+            // converts to fahrenheit
+            function fahrenheit (cel)
+            {
+                return(9.0 / 5.0 * cel + 32);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="result"></div>
+        <p>
+            Fahrenheit :
+            <input type="text" id="F" placeholder="Fahrenheit here">
+            <input type="button" id="convertToC" value="To Celsius">
+        </p>
+        <p>
+            Celsius :
+            <input type="text" id="C" placeholder="Celsius here">
+            <input type="button" id ="convertToF" value="To Fahrenheit">
+        </p>
+    </body>
+</html>

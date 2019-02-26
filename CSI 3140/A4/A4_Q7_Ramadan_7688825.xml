@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="A4_Q7_Ramadan_7688825.xsl"?>
+
+<!-- Question 7 a -->
+
+<nutrition_facts>
+    <product_name>Grandma White's cookies</product_name>
+    <serving_size>1 package</serving_size>
+    <calories>260</calories>
+    <fat_calories>100</fat_calories>
+    <fat>11 grams</fat>
+    <saturated_fat>2 grams</saturated_fat>
+    <cholesterol>5 milligrams</cholesterol>
+    <sodium>210 milligrams</sodium>
+    <total_carbohydrates>36 grams</total_carbohydrates>
+    <fiber>2 grams</fiber>
+    <sugars>15 grams</sugars>
+    <protein>5 grams</protein>
+</nutrition_facts>
+
+
+

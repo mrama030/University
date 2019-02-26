@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Question 5</title>
+        <script type = "text/javascript">
+            var string1;// input 1
+            var string2;// input 2
+            var integerValue1;
+            var integerValue2;
+
+            window.alert("Welcome to Question 5, please follow the instructions provided carefully.");//instructions to user
+
+            string1 = window.prompt("Please enter a first integer.");//obtain first input
+            string2 = window.prompt("Please enter a second integer.");//obtain second input
+
+            integerValue1 = parseInt(string1);//convert to integer
+            integerValue2 = parseInt(string2); // convert to integer
+            var times = integerValue1 / integerValue2;//calculate the number of times the second value is in the first
+
+            if (integerValue1 % integerValue2 == 0) // verify the modulo of the two to determine if the first is a multiple of the second
+            {
+                //if the modulo is zero then the first is a multiple of the second integer
+                document.writeln(
+                "<h1>The number " + integerValue1 + " is a multiple of " + integerValue2
+                + ". <br> It is also present " + times + " times within it.</h1>"  );
+            }
+            else
+            {
+                // or else it is not
+                document.writeln(
+                "<h1>The number " + integerValue1 + " is not a multiple of " + integerValue2
+                + ". <br> It is  present a non integer amount of times : " + times + " times within it.</h1>"  );
+            }
+        </script>
+    </head>
+    <body>
+        <br>Please note that if you have provided non-integer inputs, the script will not work properly.
+        <br>Please refresh the page to use this program again.
+    </body>
+</html>
