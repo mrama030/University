@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedFollow</title>
+    <link rel="icon" type="image/png" href="pics/logo.png">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="FixNavBrand.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="MenuBar.js"></script>
+</head>
+<body style="background-color:whitesmoke;">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="HomePage.html" class="navbar-left"><img height="52" width="52" src="pics/logo.png"/></a>
+            <label class="navbar-brand" style="padding-left:40px; color:white; background-color:transparent !important;">MedFollow</label>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="HomePage.html">Home</a></li>
+            <li class="active"><a href="#">Add New Patients</a></li>
+            <li><a href="SearchPatient.html">Patient Search Page</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" style="width:550px !important">
+            <div class="input-group">
+                <input id="searchText" type="text" required class="form-control" placeholder="Search for a patient..."
+                       style="width:300px !important" data-toggle="tooltip" data-placement="bottom" title="Enter a DOB (dd/mm/yyyy) or a last name (ex: Doe).">
+                <div class="input-group-btn">
+                    <button id="searchButton" class="btn btn-default" type="button">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1 style="padding-bottom:25px">Add A New Patient</h1>
+    <h4>To add a new patient, please fill out the following form and click the add button below.<br/><br/>The format requirements for all inputs (except health concerns and medication taken) are <strong>case-sensitive</strong>, <strong>interval-sensitive</strong> (numbers and dates) and <strong>must</strong> match the format of the provided example for that input field.</h4><br/>
+
+    <div style="border:5px solid black;">
+        <h3 style="margin-left:40px;">New Patient Form</h3><br>
+        <form id="addpatient" style="margin-left:80px;">
+            *First Name:<br>
+            <input required type="text" id="firstname" placeholder="ex: John" pattern="[A-Z][a-z]+" data-toggle="tooltip" data-placement="bottom" title="Enter the patient's first name."><br><br>
+
+            Middle Name:<br>
+            <input type="text" id="middlename" placeholder="ex: Steven" pattern="[A-Z][a-z]+" data-toggle="tooltip" data-placement="bottom" title="Enter the patient's middle name (if any)."><br><br>
+
+            *Last name:<br>
+            <input required type="text" placeholder="ex: Doe" pattern="[A-Z][a-z]+" id="lastname" data-toggle="tooltip" data-placement="bottom" title="Enter the patient's last name."><br><br>
+
+            *Date of Birth:<br>
+            <input required type="date" id="dateofbirth" data-toggle="tooltip" data-placement="bottom" title="Enter/select the patient's date of birth."><br><br>
+
+            *Address - Street Number:<br>
+            <input required type="number" placeholder="ex: 26" min="1" max="9999" id="streetnumber" data-toggle="tooltip" data-placement="bottom" title="Enter the street number of the patient's address."><br><br>
+
+            *Address - Street Name:<br>
+            <input required type="text" placeholder="ex: Santa Street" pattern="([A-Z][a-z]+)|([A-Z][a-z]+[ ])*([A-Z][a-z]+)" id="streetname" data-toggle="tooltip" data-placement="bottom" title="Enter the street name of the patient's address."><br><br>
+
+            *Address - City:<br>
+            <input required type="text" placeholder="ex: Ottawa" pattern="[A-Z][a-z]+" id="city" data-toggle="tooltip" data-placement="bottom" title="Enter the city of the patient's address."><br><br>
+
+            *Address - Province/State:<br>
+            <input required type="text" placeholder="ex: Ontario" pattern="[A-Z][a-z]+" id="province" data-toggle="tooltip" data-placement="bottom" title="Enter the province or state of the patient's address."><br><br>
+
+            Health Concerns:<br>
+            <textarea rows="5" cols="80" placeholder="ex: Asthma and diabetes." id="healthconcerns" data-toggle="tooltip" data-placement="bottom" title="Enter all health concerns about the patient (if any)."></textarea><br><br>
+
+            Medication Taken:<br>
+            <textarea rows="3" cols="80" placeholder="ex: Advil, Fuciden" id="medicationtaken" data-toggle="tooltip" data-placement="bottom" title="Enter all medication being taken by the patient (if any)."></textarea><br><br>
+
+            *Emergency Contact - First Name:<br>
+            <input required type="text" placeholder="ex: Jake" pattern="[A-Z][a-z]+" id="emergencyfirstname" data-toggle="tooltip" data-placement="bottom" title="Enter the emergency contact's first name."><br><br>
+
+            *Emergency Contact - Last Name:<br>
+            <input required type="text" placeholder="ex: Paul" pattern="[A-Z][a-z]+" id="emergencylastname" data-toggle="tooltip" data-placement="bottom" title="Enter the emergency contact's last name."><br><br>
+
+            *Emergency Contact - Telephone Number:<br>
+            <input required type='tel' placeholder="(###)-###-####" pattern='[\(]\d{3}[\)][-]\d{3}[-]\d{4}' data-toggle="tooltip" data-placement="bottom" title="Enter the emergency contact's phone number in the following format: (###)-###-####" id="emergencynumber"><br><br>
+
+            <input class="btn btn-default" id="addbutton" type="submit" value="Add Patient">
+            <input class="btn btn-default" type="reset">
+        </form><br>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Status Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>The new patient was added succesfully. Would you like to visit the patient's follow up profile?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="visitfollowup" onclick="viewBlank()">Yes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="viewAddPage()">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<script>
+    window.addEventListener("load",loadAddPage());
+
+    $('#addpatient').submit(function(e)
+    {
+        e.preventDefault();
+        var i1 = document.getElementById("firstname").checkValidity();
+        var i2 = document.getElementById("middlename").checkValidity();
+        var i3 = document.getElementById("lastname").checkValidity();
+        var i4 = document.getElementById("dateofbirth").checkValidity();
+        var i5 = document.getElementById("streetnumber").checkValidity();
+        var i6 = document.getElementById("streetname").checkValidity();
+        var i7 = document.getElementById("city").checkValidity();
+        var i8 = document.getElementById("province").checkValidity();
+        var i9 = document.getElementById("emergencyfirstname").checkValidity();
+        var i10 = document.getElementById("firstname").checkValidity();
+        var i11 = document.getElementById("emergencylastname").checkValidity();
+        var i12 = document.getElementById("emergencynumber").checkValidity();
+
+        if (i1 && i2 && i3 && i4 && i5 && i6 && i7 && i8 && i9 && i10 && i11 && i12)
+        {
+            $("#myModal").modal()
+        }
+    });
+
+    function viewBlank()
+    {
+        document.location.href = "BlankPatient.html";
+    }
+
+    function viewAddPage()
+    {
+        document.location.href = "AddPatient.html";
+    }
+
+    function loadAddPage()
+    {
+        // Prevent the DOB from being in the future.
+        $(function(){
+            var dtToday = new Date();
+
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+
+            if(month < 10)
+                month = '0' + month.toString();
+            if(day < 10)
+                day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+            $('#dateofbirth').attr('max', maxDate);
+        });
+    }
+</script>
+</body>
+</html>

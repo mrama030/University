@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedFollow</title>
+    <link rel="icon" type="image/png" href="pics/logo.png">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="FixNavBrand.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="MenuBar.js"></script>
+</head>
+<body style="background-color:whitesmoke;">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="HomePage.html" class="navbar-left"><img height="52" width="52" src="pics/logo.png"/></a>
+            <label class="navbar-brand" style="padding-left:40px; color:white; background-color:transparent !important;">MedFollow</label>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="AddPatient.html">Add New Patients</a></li>
+            <li class="active"><a href="#">Patient Search Page</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" style="width:550px !important">
+            <div class="input-group">
+                <input id="searchText" type="text" required class="form-control" placeholder="Search for a patient..."
+                       style="width:300px !important" data-toggle="tooltip" data-placement="bottom" title="Enter a DOB (dd/mm/yyyy) or a last name  (ex: Doe).">
+                <div class="input-group-btn">
+                    <button id="searchButton" class="btn btn-default" type="button">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1 style="padding-bottom:25px">Search For Patients</h1>
+    <h4>To search for a patient, simply enter their <strong>last name</strong> or their <strong>date of birth</strong> (DOB) in the <strong>dd/mm/yyyy</strong> date format in the above search bar and click the search button.</h4>
+    <br>
+    <h1 style="padding-bottom:25px">Search Results</h1>
+    <table class="table">
+        <tr>
+            <th style="text-align: center;">Last Name</th>
+            <th style="text-align: center;">First Name</th>
+            <th style="text-align: center;">Date of Birth (dd/mm/yyyy)</th>
+            <th style="text-align: center;">Follow-Up Profile</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Ramadan</td>
+            <td style="text-align: center;">Mohamed</td>
+            <td style="text-align: center;">28/12/2001</td>
+            <td style="text-align: center;"><a href="ExistingPatient.html">Mohamed Ramadan's Follow-Up Profile</a></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align:right;">Displaying 1 of 1 results.</td>
+        </tr>
+    </table>
+    <div class="text-center">
+        <nav aria-label="Page Numbers for Results">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item active">
+                  <span class="page-link">
+                    1
+                    <span class="sr-only">(current)</span>
+                  </span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">Next</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

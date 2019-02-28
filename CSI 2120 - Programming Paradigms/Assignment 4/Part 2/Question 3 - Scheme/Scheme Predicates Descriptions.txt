@@ -1,0 +1,67 @@
+Mohamed Ali Ramadan 7688825 (A4 - Q3 Scheme)
+
+Predicate Definitions
+
+1. Saving the solution to a text file:
+
+(saveRoute SolutionToPrint OutputFileName):
+Prints the solution to the specified output file. 
+
+(writeToFileRec SolutionToPrint OutputPort PreviousDistance):
+Prints each solution step of format: '(PoolName DistanceToParent), to the file one-by-one
+using the port created by saveRoute\2.
+
+2. Calculating the solution:
+
+(findRoute InputFile):
+The function that calls individual functions for each calculation step and returns the solution
+as a list of solution steps. 
+Return Format: '((PoolName1 DistanceToParent1) (PoolName2 DistanceToParent2) ...)
+
+(distanceGPS Lat1Deg Lon1Deg Lat2Deg Lon2Deg):
+Calculation Function #1: Calculates the distance between two pools. 
+
+(findParent ChildPool SortedPoolsList):
+Calculation Function #2: Finds a child's closest parent name and distance, returns a list of two elements. 
+Return Format: '(ClosestParentPoolName DistanceToClosestParentPool)
+
+(findParentRec ChildPool SortedPoolsList ParentNameSoFar DistanceToParentSoFar):
+Called by findParent\2 to do the actual calculation by looping over all pools up to the child.
+
+(getSortedPoolsList InputFile): Represents Step 1 of the solution calculations.
+From a text file, returns a list of pools where each pool is a list of 3 elements.
+The first is a string for the pool name, then the other two are numbers containing the 
+latitude and then the longitude of the pool's location.
+
+(getFileLines FileName):
+Generates a list of strings containing all the lines from a file.
+
+(toNumber StrIn):
+Converts a string containing a number into an actual number.
+
+(getSortedPoolsListRec ListOfLines):
+Processes recursively the list of strings extracted from the text file into a list of pools.
+
+(createTree SortedPoolsList):
+Creates an nary tree in the form of a list, from a list of pools that are sorted.
+Pool Structure: '(PoolName Latitude Longitude)
+Node Structure: '((PoolName DistanceToParent) (ChildrenNodesList))
+Tree Structure: A list of Nodes.
+
+(createTreeWithRootNode SortedPoolsList):
+Creates a tree with one node which is the root node.
+
+(createRemainingTreeRec PoolsToProcess TreeSoFar SortedPoolsList):
+Recursively builds upon the root node to build the full tree.
+SortedPoolsList is passed along so that this function can call the findParent function.
+
+(addChildRec TreeToProcess ParentKey ChildNodeToAdd):
+An essential function for building the remainder of the tree.
+Given inputs the tree built before the call, the parent node's pool name (as key) and the child node to add,
+this function will recursively create a new tree, this time with the child node added to the parent node's 
+children node list. 
+
+(traverseTreeForSolution TreeToProcess):
+Returns a list of solution steps (each solution step is a list of 2 elements: a PoolName and a 
+Distance To Parent Pool) by preorder traversal of the built tree.
+

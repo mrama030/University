@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uottawa.mohamedramadan.rentcalculator.WelcomeScreen">
+
+    <LinearLayout
+        android:id="@+id/verticalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- labelInstructions -->
+        <TextView
+            android:id="@+id/labelInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:lineSpacingExtra="8sp"
+            android:text="Fill the following form and press Calculate."
+            android:textAlignment="viewStart"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:id="@+id/scrollViewVerticalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <!-- labelResidence -->
+                <TextView
+                    android:id="@+id/labelResidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Residence Information"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <!-- Monthly Rent and Number of Rooms -->
+                <LinearLayout
+                    android:id="@+id/layoutResidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/textRooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="# of Rooms*"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/textRent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Monthly Rent*"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <!-- Room 1 -->
+                <LinearLayout
+                    android:id="@+id/verticalLayoutRoom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- labelRoom1 -->
+                    <TextView
+                        android:id="@+id/labelRoom1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Room 1 Information"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <!-- Size and Number of Roommates -->
+                    <LinearLayout
+                        android:id="@+id/layoutRoom1Info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textRoom1People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="# of People*"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/textRoom1Size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Size*"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                    <!-- Room Type -->
+                    <TextView
+                        android:id="@+id/labelType1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Room 1 Type*"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinnerRoom1Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/textRoom1Name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 1 - Person 1*"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/textRoom1Name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 1 - Person 2"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <!-- Room 2 -->
+                <LinearLayout
+                    android:id="@+id/verticalLayoutRoom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- labelRoom2 -->
+                    <TextView
+                        android:id="@+id/labelRoom2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Room 2 Information"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <!-- Size and Number of Roommates -->
+                    <LinearLayout
+                        android:id="@+id/layoutRoom2Info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textRoom2People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="# of People*"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/textRoom2Size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Size*"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                    <!-- Room Type -->
+                    <TextView
+                        android:id="@+id/labelType2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Room 2 Type*"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinnerRoom2Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/textRoom2Name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 2 - Person 1*"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/textRoom2Name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 2 - Person 2"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <!-- Room 3 -->
+                <LinearLayout
+                    android:id="@+id/verticalLayoutRoom3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- labelRoom3 -->
+                    <TextView
+                        android:id="@+id/labelRoom3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Room 3 Information"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <!-- Size and Number of Roommates -->
+                    <LinearLayout
+                        android:id="@+id/layoutRoom3Info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textRoom3People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="# of People*"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/textRoom3Size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Size*"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                    <!-- Room Type -->
+                    <TextView
+                        android:id="@+id/labelType3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Room 3 Type*"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinnerRoom3Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/textRoom3Name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 3 - Person 1*"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/textRoom3Name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 3 - Person 2"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <!-- Room 4 -->
+                <LinearLayout
+                    android:id="@+id/verticalLayoutRoom4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- labelRoom2 -->
+                    <TextView
+                        android:id="@+id/labelRoom4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Room 4 Information"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <!-- Size and Number of Roommates -->
+                    <LinearLayout
+                        android:id="@+id/layoutRoom4Info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textRoom4People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="# of People*"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/textRoom4Size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Size*"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                    <!-- Room Type -->
+                    <TextView
+                        android:id="@+id/labelType4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Room 4 Type*"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinnerRoom4Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/textRoom4Name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 4 - Person 1*"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/textRoom4Name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 4 - Person 2"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <!-- Room 5 -->
+                <LinearLayout
+                    android:id="@+id/verticalLayoutRoom5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- labelRoom2 -->
+                    <TextView
+                        android:id="@+id/labelRoom5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Room 5 Information"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <!-- Size and Number of Roommates -->
+                    <LinearLayout
+                        android:id="@+id/layoutRoom5Info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textRoom5People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="# of People*"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/textRoom5Size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Size*"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                    <!-- Room Type -->
+                    <TextView
+                        android:id="@+id/labelType5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="8sp"
+                        android:text="Room 5 Type*"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinnerRoom5Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/textRoom5Name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 5 - Person 1*"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/textRoom5Name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Room 5 - Person 2"
+                        android:inputType="textPersonName"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

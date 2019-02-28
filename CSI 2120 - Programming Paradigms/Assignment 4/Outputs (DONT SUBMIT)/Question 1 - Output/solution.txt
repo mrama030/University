@@ -1,0 +1,62 @@
+Glen Cairn 0.000
+Corkstown 2341.407
+Michèle 11552.633
+Britannia 13774.165
+Woodroffe 18358.110
+McKellar 21109.208
+Alta Vista 23095.048
+Kingsmere 27033.293
+Bel Air 29740.475
+Agincourt 32173.575
+Pushman 33248.949
+Greenboro 35364.273
+Raven 37407.357
+Alexander 39090.546
+Meadowvale 40261.491
+Frank Licari 41604.959
+Pauline Vanier 42157.589
+Bellevue Manor 43316.951
+Rideauview 44358.301
+Heron 46246.733
+Elizabeth Manley 46992.740
+Westboro 48929.926
+Carleton Heights 50177.618
+Ruth Wildgen 52588.486
+Frank Ryan 55326.444
+Parkway 59204.939
+Owl 60039.779
+Hampton 61388.605
+Canterbury 62153.213
+Lisa 65762.373
+Parkdale 67155.050
+Reid 69755.146
+Chaudiere 75360.140
+Ev Tremblay 79260.103
+McNabb 82661.658
+St. Luke's 87552.221
+Sandy Hill 90493.933
+Dutchie's Hole 91658.682
+Alvin Heights 93850.401
+Optimiste 96907.242
+Hawthorne 98626.808
+Alda Burt 99318.279
+Champlain 103322.802
+Balena 106196.514
+Iona 106999.191
+Weston 108911.674
+Lions 111057.940
+General Burns 113375.476
+Windsor 116845.256
+Entrance 122997.854
+Bingham 124832.765
+Jules Morin 126527.057
+Strathcona 128508.879
+Overbrook 129569.981
+Kiwanis 132792.825
+St-Laurent 133628.055
+St. Paul's 134510.582
+Bearbrook 135575.813
+Cecil Morrison 136955.444
+Crestview 143365.297
+Sylvia Holden 143988.500
+Brantwood 146065.645

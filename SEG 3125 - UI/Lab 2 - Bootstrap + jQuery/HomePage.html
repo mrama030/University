@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedFollow</title>
+    <link rel="icon" type="image/png" href="pics/logo.png">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="FixNavBrand.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="MenuBar.js"></script>
+</head>
+<body style="background-color:whitesmoke;">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="HomePage.html" class="navbar-left"><img height="52" width="52" src="pics/logo.png"/></a>
+                <label class="navbar-brand" style="padding-left:40px; color:white; background-color:transparent !important;">MedFollow</label>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="AddPatient.html">Add New Patients</a></li>
+                <li><a href="SearchPatient.html">Patient Search Page</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" style="width:550px !important">
+                <div class="input-group">
+                    <input id="searchText" type="text" required class="form-control" placeholder="Search for a patient..."
+                           style="width:300px !important" data-toggle="tooltip" data-placement="bottom" title="Enter a DOB (dd/mm/yyyy) or a last name  (ex: Doe).">
+                    <div class="input-group-btn">
+                        <button id="searchButton" class="btn btn-default" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="padding-bottom:25px">MedFollow Home Page</h1>
+        <h4>Welcome to the MedFollow Home Page!<br/><br/>Feel free to add new patients or search for existing patients using the navigation menu above.</h4>
+        <br>
+        <h1 style="padding-bottom:25px">About</h1>
+        <h4>MedFollow is a system that allows nurses to track information about hair-transplant patients' healing process.</h4>
+    </div>
+</body>
+</html>

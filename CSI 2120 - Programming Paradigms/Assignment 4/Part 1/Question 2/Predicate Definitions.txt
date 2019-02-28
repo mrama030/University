@@ -1,0 +1,99 @@
+List of Predicate Definitions
+
+append/3 : Built in predicate to combine elements from two lists into one.
+
+sortedPoolList(Spl):
+The following predicate was created by "Preprocess.jar". It returns the list of sorted pools.
+
+insertAtEnd(Value,[],[Value]): Base Case for the insertAtEnd predicate responsible of inserting an element to the end of the provided list.
+
+insertAtEnd(Value,[H|T],[H|NewTail]): Normal case for the insertAtEnd recursive predicate.
+
+calculateDistance(Lat1Deg,Lon1Deg,Lat2Deg,Lon2Deg,D):
+This predicate calculates the distance between two geographic locations, and returns the value in the D variable.
+
+naryTreeNode(Pool, ChildrenNodes, DistanceToParent, CreatedNode):
+Represents the structure of a node in the tree. Stores the attributes in a list and returns them in the CreatedNode variable.
+
+findRoute(X):
+Predicate used to find the solution in a list returned in the X variable.
+
+createTree([RootPool|OtherPools],CreatedTree):
+Predicate that creates a tree from the sorted pools list (SPL) and returns the tree (as a list of naryTreeNodes) in the CreatedTree variable.
+Responsible for creating a childless root node and passing it to the builtTree predicate.
+
+
+Build Tree predicates:
+
+buildTree(RootNode,[RootPool|OtherPools],BuiltTree):
+This is a helper method which allows to start building the tree from the second pool in the sorted pools list.
+Takes the root node created by the createTree predicate and the SPL as parameters, and returns the built tree.
+
+builTreeRec([],_,TreeSoFar,TreeSoFar):
+Base case for the recursive build predicate. When there are no more pools from the SPL to add to the tree,
+then the tree is built and must be returned.
+
+buildTreeRec([[Name,Lat,Lon|[]]|PoolsTail],SPL,TreeSoFar,FinalTree):
+Typical case for the recursive build predicate. The first parameter can be read as: [PoolHead|PoolsTail].
+
+
+Minimum Pool Predicates:
+
+minPool(CurrentName,CurrentDistance,_,PotentialDistance,CurrentName,CurrentDistance):
+Determines (name and distance) that the current pool is still smaller than the potential pool.
+
+minPool(_,CurrentDistance,PotentialName,PotentialDistance,PotentialName,PotentialDistance):
+Determines (name and distance) that the potential pool is smaller than the current pool.
+
+
+Find Closest Parent predicates:
+
+findClosestParent(ChildPool,SPL,ClosestParentName,MinimumDistance): Helper method.
+
+findClosestParentRec([PoolName,Lat,Lon|[]],[[PoolName,Lat,Lon|[]]|_],ClosestParentNameSoFar,MinimumDistanceSoFar,ClosestParentNameSoFar,MinimumDistanceSoFar):
+Base case for the recursive findClosestParentRec predicate. When you hit the same pool, do not calculate distances, return the values obtained previously.
+
+findClosestParentRec([PoolName1,Lat1,Lon1|[]],[[PoolName2,Lat2,Lon2|[]]|PoolsTail],ClosestParentNameSoFar,MinimumDistanceSoFar,ClosestParentName,MinimumDistance):
+Normal case for finding the name of the closest parent as well as the distance to it.
+
+
+Add Child Predicates:
+
+addChild(ParentName,CreatedChildNode,TreeSoFar,NewTree): Helper method.
+
+addChildRec(ParentName,[[C-Name,C-Lat,C-Lon|[]],_,C-DistanceToParent|[]],[[[ParentName,O-Lat,O-Lon|[]],O-Children,C-DistanceToParent|[]]|RemainingNodes],NewParentNode):
+Base case for the addChildRec recursive predicate. Inserts the child to the parent's children nodes list and returns this new parent.
+
+addChildRec(ParentName,ChildNodeToAdd,[[[NotParentName,_,_|[]],O-Children,_|[]]|RemainingNodes],NewParentNode):
+Normal case for adding a child recursively. Calls recursively for list of children, then recursively for list of remaining (sibling nodes).
+
+
+Replace Old Parent Predicates:
+
+Has a helper method, base case and a normal recursive case.
+Takes as an input a new parent node and an existing tree. Replaces the old parent node with the new one and 
+returns a new tree containing the new parent node.
+
+
+Preorder Predicates:
+
+preorder(Tree,Solution): Helper method for preorder traversal of the tree that obtains the solution in the form of a list.
+
+preorderRec([],ListSoFar,ListSoFar): The base case for the recursive preorder.
+
+preorderRec([[[Name,_,_|[]],ChildrenNodes,DistanceToParent|[]]|RemainingTree],ListSoFar,Solution):
+The normal case for the recursive preorder. It appends the values needed immediately to the solution list,
+then it recursively calls this predicate upon the children of the node, followed by a recursive call for the next sibling
+(node on the same level).  
+
+
+Predicates for writing solution to a file:
+
+saveRoute([],_): Writing an empty list to the file will fail immediately.
+
+saveRoute(SolutionList, Filename): Writes the solution list to the specified file. Also acts as a helper method for recWrite/2. Creates a stream and passes it to recWrite/2.
+
+recWrite([],_): Base case for the recursive predicate used to write to the file. 
+
+recWrite([[Name,Distance|[]]|Tail],Stream): Normal case for the recursive predicate. Writes one solution step to the stream (file).
+

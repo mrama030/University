@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/currencies"
+        android:entryValues="@array/currencies"
+        android:key="list_preference_1"
+        android:summary="Please select a currency for the monthly rent."
+        android:title="Currency" />
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/measurements"
+        android:entryValues="@array/measurements"
+        android:key="list_preference_2"
+        android:summary="Please select a measurement standard."
+        android:title="Measurement Type" />
+</PreferenceScreen>

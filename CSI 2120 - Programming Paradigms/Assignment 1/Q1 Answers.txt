@@ -1,0 +1,5 @@
+a) findall(Employee,(employee(Employee,Company), company(Company,City), not(person(Employee,City))),L).
+b) findall(X,(company(X,Y),city(Y,ontario)),L).
+c) findall(X,(person(X,City),not(employee(X,Company))),L).
+d) findall(X,(employee(X,C),company(C,ottawa)),L).
+e) setof(X,Y^(employee(X,Y),company(Y,ottawa)),L). 

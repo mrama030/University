@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedFollow</title>
+    <link rel="icon" type="image/png" href="pics/logo.png">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="FixNavBrand.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="MenuBar.js"></script>
+</head>
+<body style="background-color:whitesmoke;">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="HomePage.html" class="navbar-left"><img height="52" width="52" src="pics/logo.png"/></a>
+            <label class="navbar-brand" style="padding-left:40px; color:white; background-color:transparent !important;">MedFollow</label>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="AddPatient.html">Add New Patients</a></li>
+            <li><a href="SearchPatient.html">Patient Search Page</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" style="width:550px !important">
+            <div class="input-group">
+                <input id="searchText" type="text" required class="form-control" placeholder="Search for a patient..."
+                       style="width:300px !important" data-toggle="tooltip" data-placement="bottom" title="Enter a DOB (dd/mm/yyyy) or a last name  (ex: Doe).">
+                <div class="input-group-btn">
+                    <button id="searchButton" class="btn btn-default" type="button">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div class="container" style="font-family: Arial;font-weight: normal;">
+    <h1 style="padding-bottom:15px">Newly Added Patient's Follow-Up Profile</h1>
+
+    <div style="border:5px solid black;">
+        <div style="margin-left:40px; margin-top:20px";>
+            <button class="btn btn-default" id="edit" disabled="true">Edit Follow-Up Profile</button>
+            <button class="btn btn-default" id="lock">Save & Lock Follow-Up Profile</button>
+        </div>
+
+        <div style="margin-left:80px;";>
+            <h3>Patient Instructions</h3>
+
+            <input id="I1" type="checkbox"/><label style="margin-left:10px;"></label>Don't touch the recipient/donor areas</label><br>
+            <input id="I2" type="checkbox"/><label style="margin-left:10px;"></label>Wash hair only with water</label><br>
+            <input id="I3" type="checkbox"/><label style="margin-left:10px;"></label>No heavy weights</label><br>
+            <input id="I4" type="checkbox"/><label style="margin-left:10px;"></label>Always wear a cap</label><br>
+            <input id="I5" type="checkbox"/><label style="margin-left:10px;"></label>Sleep in a 45 degrees position</label><br>
+
+            <div>
+                <h3 style="padding-bottom:15px">Day 1</h3>
+
+                <h4 style="padding-bottom:10px">Recipient Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+
+                <input id="D1E1" type="radio" name="D1Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+
+                <input id="D1E2" type="radio" name="D1Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D1E3" type="radio" name="D1Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D1E4" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+                <input id="D1E5" type="checkbox"/><label style="margin-left:10px;"></label>Scab Formation</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Donor Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+                <input id="D1E6" type="radio" name="D1Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+                <input id="D1E7" type="radio" name="D1Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D1E8" type="radio" name="D1Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D1E9" type="checkbox"/><label style="margin-left:10px;"></label>Bruising is Major</label><br>
+                <input id="D1E10" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Medications</h4>
+                <textarea id="D1E11" rows="3" cols="80"></textarea>
+            </div>
+
+            <div>
+                <h3 style="padding-bottom:15px">Day 2</h3>
+
+                <h4 style="padding-bottom:10px">Recipient Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+
+                <input id="D2E1" type="radio" name="D2Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+
+                <input id="D2E2" type="radio" name="D2Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D2E3" type="radio" name="D2Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D2E4" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+                <input id="D2E5" type="checkbox"/><label style="margin-left:10px;"></label>Scab Formation</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Donor Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+                <input id="D2E6" type="radio" name="D2Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+                <input id="D2E7" type="radio" name="D2Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D2E8" type="radio" name="D2Pain2"style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D2E9" type="checkbox"/><label style="margin-left:10px;"></label>Bruising is Major</label><br>
+                <input id="D2E10" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Medications</h4>
+                <textarea id="D2E11" rows="3" cols="80"></textarea>
+            </div>
+
+            <div>
+                <h3 style="padding-bottom:15px">Day 3</h3>
+
+                <h4 style="padding-bottom:10px">Recipient Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+
+                <input id="D3E1" type="radio" name="D3Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+
+                <input id="D3E2" type="radio" name="D3Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D3E3" type="radio" name="D3Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D3E4" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+                <input id="D3E5" type="checkbox"/><label style="margin-left:10px;"></label>Scab Formation</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Donor Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+                <input id="D3E6" type="radio" name="D3Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+                <input id="D3E7" type="radio" name="D3Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D3E8" type="radio" name="D3Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D3E9" type="checkbox"/><label style="margin-left:10px;"></label>Bruising is Major</label><br>
+                <input id="D3E10" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Medications</h4>
+                <textarea id="D3E11" rows="3" cols="80"></textarea>
+            </div>
+
+            <div>
+                <h3 style="padding-bottom:15px">Day 4</h3>
+
+                <h4 style="padding-bottom:10px">Recipient Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+
+                <input id="D4E1" type="radio" name="D4Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+
+                <input id="D4E2" type="radio" name="D4Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D4E3" type="radio" name="D4Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D4E4" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+                <input id="D4E5" type="checkbox"/><label style="margin-left:10px;"></label>Scab Formation</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Donor Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+                <input id="D4E6" type="radio" name="D4Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+                <input id="D4E7" type="radio" name="D4Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D4E8" type="radio" name="D4Pain2"style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D4E9" type="checkbox"/><label style="margin-left:10px;"></label>Bruising is Major</label><br>
+                <input id="D4E10" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Medications</h4>
+                <textarea id="D4E11" rows="3" cols="80"></textarea>
+            </div>
+
+            <div>
+                <h3 style="padding-bottom:15px">Day 5</h3>
+
+                <h4 style="padding-bottom:10px">Recipient Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+
+                <input id="D5E1" type="radio" name="D5Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+
+                <input id="D5E2" type="radio" name="D5Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D5E3" type="radio" name="D5Pain1" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D5E4" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+                <input id="D5E5" type="checkbox"/><label style="margin-left:10px;"></label>Scab Formation</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Donor Area</h4>
+
+                <label style="font-family: Arial;font-weight: normal;">Pain:</label>
+                <input id="D5E6" type="radio" name="D5Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">None</label>
+                <input id="D5E7" type="radio" name="D5Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Moderate</label>
+                <input id="D5E8" type="radio" name="D5Pain2" style="margin-left:10px;"/>
+                <label style="margin-left:10px;font-family: Arial;font-weight: normal;">Severe</label><br>
+                <input id="D5E9" type="checkbox"/><label style="margin-left:10px;"></label>Bruising is Major</label><br>
+                <input id="D5E10" type="checkbox"/><label style="margin-left:10px;"></label>Bleeding</label><br>
+
+                <h4 style="padding-bottom:10px; padding-top: 10px">Medications</h4>
+                <textarea id="D5E11" rows="3" cols="80"></textarea>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<script>
+
+    window.addEventListener("load",setup);
+
+    function setup()
+    {
+        document.getElementById("edit").addEventListener("click",enableAll);
+        document.getElementById("lock").addEventListener("click",disableAll);
+    }
+
+    function enableAll()
+    {
+        document.getElementById("D1E1").disabled=false;
+        document.getElementById("D1E2").disabled=false;
+        document.getElementById("D1E3").disabled=false;
+        document.getElementById("D1E4").disabled=false;
+        document.getElementById("D1E5").disabled=false;
+        document.getElementById("D1E6").disabled=false;
+        document.getElementById("D1E7").disabled=false;
+        document.getElementById("D1E8").disabled=false;
+        document.getElementById("D1E9").disabled=false;
+        document.getElementById("D1E10").disabled=false;
+        document.getElementById("D1E11").disabled=false;
+
+        document.getElementById("D2E1").disabled=false;
+        document.getElementById("D2E2").disabled=false;
+        document.getElementById("D2E3").disabled=false;
+        document.getElementById("D2E4").disabled=false;
+        document.getElementById("D2E5").disabled=false;
+        document.getElementById("D2E6").disabled=false;
+        document.getElementById("D2E7").disabled=false;
+        document.getElementById("D2E8").disabled=false;
+        document.getElementById("D2E9").disabled=false;
+        document.getElementById("D2E10").disabled=false;
+        document.getElementById("D2E11").disabled=false;
+
+        document.getElementById("D3E1").disabled=false;
+        document.getElementById("D3E2").disabled=false;
+        document.getElementById("D3E3").disabled=false;
+        document.getElementById("D3E4").disabled=false;
+        document.getElementById("D3E5").disabled=false;
+        document.getElementById("D3E6").disabled=false;
+        document.getElementById("D3E7").disabled=false;
+        document.getElementById("D3E8").disabled=false;
+        document.getElementById("D3E9").disabled=false;
+        document.getElementById("D3E10").disabled=false;
+        document.getElementById("D3E11").disabled=false;
+
+        document.getElementById("D4E1").disabled=false;
+        document.getElementById("D4E2").disabled=false;
+        document.getElementById("D4E3").disabled=false;
+        document.getElementById("D4E4").disabled=false;
+        document.getElementById("D4E5").disabled=false;
+        document.getElementById("D4E6").disabled=false;
+        document.getElementById("D4E7").disabled=false;
+        document.getElementById("D4E8").disabled=false;
+        document.getElementById("D4E9").disabled=false;
+        document.getElementById("D4E10").disabled=false;
+        document.getElementById("D4E11").disabled=false;
+
+        document.getElementById("D5E1").disabled=false;
+        document.getElementById("D5E2").disabled=false;
+        document.getElementById("D5E3").disabled=false;
+        document.getElementById("D5E4").disabled=false;
+        document.getElementById("D5E5").disabled=false;
+        document.getElementById("D5E6").disabled=false;
+        document.getElementById("D5E7").disabled=false;
+        document.getElementById("D5E8").disabled=false;
+        document.getElementById("D5E9").disabled=false;
+        document.getElementById("D5E10").disabled=false;
+        document.getElementById("D5E11").disabled=false;
+
+        document.getElementById("I1").disabled=false;
+        document.getElementById("I2").disabled=false;
+        document.getElementById("I3").disabled=false;
+        document.getElementById("I4").disabled=false;
+        document.getElementById("I5").disabled=false;
+
+        document.getElementById("edit").disabled = true;
+        document.getElementById("lock").disabled = false;
+    }
+
+    function disableAll()
+    {
+        document.getElementById("D1E1").disabled=true;
+        document.getElementById("D1E2").disabled=true;
+        document.getElementById("D1E3").disabled=true;
+        document.getElementById("D1E4").disabled=true;
+        document.getElementById("D1E5").disabled=true;
+        document.getElementById("D1E6").disabled=true;
+        document.getElementById("D1E7").disabled=true;
+        document.getElementById("D1E8").disabled=true;
+        document.getElementById("D1E9").disabled=true;
+        document.getElementById("D1E10").disabled=true;
+        document.getElementById("D1E11").disabled=true;
+
+        document.getElementById("D2E1").disabled=true;
+        document.getElementById("D2E2").disabled=true;
+        document.getElementById("D2E3").disabled=true;
+        document.getElementById("D2E4").disabled=true;
+        document.getElementById("D2E5").disabled=true;
+        document.getElementById("D2E6").disabled=true;
+        document.getElementById("D2E7").disabled=true;
+        document.getElementById("D2E8").disabled=true;
+        document.getElementById("D2E9").disabled=true;
+        document.getElementById("D2E10").disabled=true;
+        document.getElementById("D2E11").disabled=true;
+
+        document.getElementById("D3E1").disabled=true;
+        document.getElementById("D3E2").disabled=true;
+        document.getElementById("D3E3").disabled=true;
+        document.getElementById("D3E4").disabled=true;
+        document.getElementById("D3E5").disabled=true;
+        document.getElementById("D3E6").disabled=true;
+        document.getElementById("D3E7").disabled=true;
+        document.getElementById("D3E8").disabled=true;
+        document.getElementById("D3E9").disabled=true;
+        document.getElementById("D3E10").disabled=true;
+        document.getElementById("D3E11").disabled=true;
+
+        document.getElementById("D4E1").disabled=true;
+        document.getElementById("D4E2").disabled=true;
+        document.getElementById("D4E3").disabled=true;
+        document.getElementById("D4E4").disabled=true;
+        document.getElementById("D4E5").disabled=true;
+        document.getElementById("D4E6").disabled=true;
+        document.getElementById("D4E7").disabled=true;
+        document.getElementById("D4E8").disabled=true;
+        document.getElementById("D4E9").disabled=true;
+        document.getElementById("D4E10").disabled=true;
+        document.getElementById("D4E11").disabled=true;
+
+        document.getElementById("D5E1").disabled=true;
+        document.getElementById("D5E2").disabled=true;
+        document.getElementById("D5E3").disabled=true;
+        document.getElementById("D5E4").disabled=true;
+        document.getElementById("D5E5").disabled=true;
+        document.getElementById("D5E6").disabled=true;
+        document.getElementById("D5E7").disabled=true;
+        document.getElementById("D5E8").disabled=true;
+        document.getElementById("D5E9").disabled=true;
+        document.getElementById("D5E10").disabled=true;
+        document.getElementById("D5E11").disabled=true;
+
+        document.getElementById("I1").disabled=true;
+        document.getElementById("I2").disabled=true;
+        document.getElementById("I3").disabled=true;
+        document.getElementById("I4").disabled=true;
+        document.getElementById("I5").disabled=true;
+
+        document.getElementById("edit").disabled = false;
+        document.getElementById("lock").disabled = true;
+    }
+</script>
+</body>
+</html>
